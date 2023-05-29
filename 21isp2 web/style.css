@@ -1,0 +1,162 @@
+/*----- fonts -----*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+/*----- main settings -----*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  display: grid;
+  /*place-items производит выравнивание всех элементов макета сетки по оси столбца и по оси строки grid-контейнера */
+  place-items: center;
+  padding: 0 32px;
+  animation: rotate 66s infinite alternate linear;
+}
+/*----- square -----*/
+.square {
+  position: fixed;
+  top: -50vmin;
+  left: -50vmin;
+  width: 100vmin;
+  height: 100vmin;
+  border-radius: 2%;
+  background: #ff6852;
+}
+.square::after {
+  content: '';
+  position: inherit;
+  right: -50vmin;
+  bottom: -55vmin;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: #c5ff1f;
+}
+/*----- card -----*/
+.card {
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 0 20px;
+  padding: 160px 30px 30px;
+  border-radius: 1.25rem;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 20px 20px 20px rgba(34, 60, 80, 0.4);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  background: rgba(88, 88, 88, 0.37);
+  top: -880px;
+  width: 1000px;
+  height: 1000px;
+  translate: -50%;
+}
+
+.card .logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #3984ff;
+  height: 64px;
+  width: 64px;
+  top: 30px;
+  left: calc(50% - 64px / 2);
+}
+.card .logo .bxl-dropbox {
+  color: black;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.card > h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 30px;
+  color: rgb(102, 100, 100);
+}
+
+.form {
+  margin: 0 0 30px;
+  display: grid;
+  gap: 18px;
+}
+.form > input,
+.form > button {
+  width: 100%;
+  height: 50px;
+  border-radius: 28px;
+}
+
+.form > input {
+  border: 2px solid rgb(230, 230, 230);
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 24px;
+  color: #000;
+  transition: all 0.376s;
+}
+
+.form > input:hover {
+  border: 2px solid rgba(95, 95, 95, 0.849);
+}
+.form > input:active {
+  border: 3px solid rgb(0, 0, 0);
+}
+.form > input::placeholder {
+  color: rgb(230, 230, 230);
+}
+.form > button {
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  background: rgba(88, 88, 88, 0.37);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  /* letter-spacing Определяет интервал между символами в пределах элемента */
+  letter-spacing: 2px;
+  transition: all 0.375s;
+  border: 0;
+}
+.form > button:hover {
+  color: #fff;
+  background: #3984ff;
+}
+.form > button:active {
+  background: #275aac;
+}
+.card > footer {
+  color: #7c7c7c;
+}
+.card > footer > a {
+  color: rgb(67, 41, 145);
+  transition: all 0.375s;
+}
+.card > footer > a:hover {
+  color: rgb(43, 27, 92);
+}
+
+@media (width >= 400px) {
+  body {
+    padding: 0;
+  }
+  .card {
+    margin: 0;
+    width: 460px;
+  }
+}
